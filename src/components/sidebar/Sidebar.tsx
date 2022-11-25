@@ -1,8 +1,6 @@
-import React, {useState} from "react";
+import {useState} from "react";
 
-function Banner() {
-    // to change burger classes
-    // const [setBurgerClass] = useState("burger-bar unclicked")
+function Sidebar() {
     const [menu_class, setMenuClass] = useState("menu sidebar hidden")
     const [isMenuClicked, setIsMenuClicked] = useState(false)
 
@@ -160,4 +158,4 @@ function Banner() {
     );
 }
 
-export default Banner;
+export default Sidebar;

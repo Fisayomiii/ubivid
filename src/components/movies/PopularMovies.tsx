@@ -1,6 +1,3 @@
-import "vite";
-import "typescript";
-import "react";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from "framer-motion";

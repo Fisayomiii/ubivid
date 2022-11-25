@@ -1,9 +1,7 @@
-import "vite";
-import "typescript";
 import "react";
 
 function Banner() {
-  
+
   return (
     <>
 
