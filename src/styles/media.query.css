@@ -1,0 +1,118 @@
+@media only screen and (max-width: 767px) {
+    .backdrop_image {
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .backdrop_text {
+        min-height: 60vh;
+        margin: auto;
+        left: 50%;
+        /* top: 35%; */
+        transform: translate(-50%, -30%);
+        width: 100%;
+        text-align: center;
+    }
+
+    .backdrop_text .title {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .action button {
+        width: 150px;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .watchbtn {
+        background-color: var(--container-pink);
+        color: var(--title-color);
+        font-weight: 500;
+        width: 100px;
+        word-spacing: 10px;
+        border-radius: 40px;
+        padding: 10px 0px;
+        margin-left: 25px;
+        transition: all 0.3s ease 0s;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        max-width: 200px;
+    }
+
+    .backdrop_image {
+        position: absolute;
+        bottom: 30%;
+    }
+}
+
+@media (max-width: 991px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .content {
+        padding-top: 8rem;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        height: 100vh;
+        width: 100%;
+        max-width: 300px;
+        transition: 0.2s linear;
+    }
+
+    .sidebar.is-active {
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .movies {
+        padding: 20px 20px;
+        margin-top: -20em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .movies_header {
+        padding: 20px 15px;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .bottom-images {
+        grid-template-columns: .8fr;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .bottom-images {
+        grid-template-columns: repeat(3, 200px);
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .bottom-images {
+        gap: 1.5rem;
+        padding-bottom: 15em;
+
+    }
+}
