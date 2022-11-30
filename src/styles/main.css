@@ -12,7 +12,7 @@
   /*Green gradient*/
   --body-color: linear-gradient(90deg,
       hsl(225, 11%, 15%) 0%,
-      hsl(216, 10%, 20%) 100%);
+      hsl(225, 11%, 15%) 100%);
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -71,8 +71,10 @@ body {
 }
 
 .app {
+  background: var(--body-color);
   display: flex;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .logo_div h4 {
@@ -242,23 +244,23 @@ body {
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
-  object-position: 50% 50%;
   z-index: var(--z-10);
   overflow: hidden;
+  opacity: 1;
   transition: transform 0.3s ease;
 }
 
 .backdrop_text {
   position: absolute;
-  margin-left: 100px;
+  margin-left: 140px;
   z-index: var(--z-10);
   top: 40%;
-  transform: translateY(-50%);
   width: 60%;
+  text-align: justify;
 }
 
 .backdrop_text .title {
-  font-size: var(--biggest-font-size);
+  font-size: 2.4em;
   font-weight: var(--font-semi-bold);
 }
 
@@ -272,7 +274,6 @@ body {
       rgba(255, 255, 255, 0.1) 20%,
       rgba(255, 255, 255, 0) 50%);
   backdrop-filter: blur(15px);
-  margin-top: 10px;
   margin-right: 10px;
 }
 
@@ -338,49 +339,49 @@ body {
 }
 
 .movies {
-  margin-top: -6em;
+  background: var(--body-color);
+  margin-top: 8em;
   padding: 20px 30px;
   margin-bottom: 40em;
 }
 
 .movies_header {
-  /* padding: 5px 20px; */
   margin-bottom: 3em;
 }
 
-.bottom-images {
-  z-index:1;
+.wrapper{
   position: absolute;
-  display: flex;
-  gap: 1rem 2rem;
-  scroll-behavior: smooth;
-  margin: 0 auto;
+  width: 73%;
+  margin: -2% 3%;
   overflow: hidden;
   cursor: grab;
 }
 
-.bottom-images .img {
-  width: 220px;
-  height: 310px;
+.inner-wrapper {
   position: relative;
-  border-radius: 10px;
-  overflow: hidden;
+  display: flex;
+  gap: 0.5rem;
+}
+.poster-img {
+  position: relative;
+  height: auto;
+  width: auto;
+  min-height: 200px;
+  min-width: 230px;
+  padding: 15px;
 }
 
-.bottom-images .img img {
-  position: absolute;
+.poster-img .posterPath-img {
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
   border-radius: 10px;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.bottom-images .img img:hover {
+/* .poster-img .posterPath-img:hover {
   transform: scale(1.1);
-}
+} */
 
 .icons span {
   width: 40px;
@@ -389,7 +390,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--title-color);
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
   font-size: 20px;
@@ -399,7 +400,7 @@ body {
 
 .icons {
   position: absolute;
-  top: 1rem;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -409,46 +410,13 @@ body {
   z-index: var(--z-10);
 }
 
-.tooltip {
-  position: absolute;
-  right: -45px;
-  top: 170%;
-  transform: translateY(-50%) translateX(-30px);
-  white-space: nowrap;
-  padding: 3px 6px;
-  background: var(--title-color);
-  color: var(--dark-color);
-  font-weight: var(--font-medium);
-  font-size: 2px;
-  border-radius: 4px;
-  pointer-events: none;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.tooltip::before {
-  content: "";
-  position: absolute;
-  top: 1%;
-  right: 30px;
-  width: 10px;
-  height: 10px;
-  background: var(--title-color);
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.icons span:hover .tooltip {
-  top: 150%;
-  opacity: 1;
-}
-
 .poster_text {
   position: absolute;
-  z-index: 20;
-  bottom: 5%;
+  z-index: var(--z-10);
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 80%;
   backdrop-filter: blur(54px);
   border-radius: 8px;
   padding: 12px;
@@ -473,7 +441,7 @@ body {
     width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    z-index: 10;
+    z-index: var(--z-10);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -483,17 +451,15 @@ body {
   }
 
   .backdrop_text {
-    min-height: 60vh;
     margin: auto;
+    position: absolute;
     left: 50%;
-    /* top: 35%; */
-    transform: translate(-50%, -30%);
-    width: 100%;
+    top: 75%;
     text-align: center;
   }
 
   .backdrop_text .title {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: var(--font-bolder);
   }
 
@@ -520,7 +486,6 @@ body {
   .sidebar {
     max-width: 200px;
   }
-
   .backdrop_image {
     position: absolute;
     bottom: 30%;
@@ -544,7 +509,6 @@ body {
     display: none;
   }
 
-  /* ---- sliding menu ----- */
   .visible {
     position: fixed;
     flex: 1 1 0;
@@ -557,18 +521,15 @@ body {
     background: #23252B;
     overflow-y: auto;
   }
-
+  .content_section{
+    position: relative;
+    top: -4%;
+    margin-bottom: 20em;
+  }
   .movies {
     margin-top: -6em;
     padding: 20px 30px;
     margin-bottom: 50em;
-  }
-}
-
-@media only screen and (max-width: 991px) {
-  .movies {
-    padding: 20px 20px;
-    margin-top: -20em;
   }
 }
 
@@ -578,56 +539,6 @@ body {
   }
 }
 
-
-@media screen and (max-width: 320px) {
-  .bottom-images {
-    grid-template-columns: .8fr;
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .bottom-images {
-    grid-template-columns: repeat(3, 200px);
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .bottom-images {
-    gap: 1.5rem;
-    padding-bottom: 15em;
-
-  }
-}
-
-.wrapper{
-  position: absolute;
-  background-color: #fff;
-  margin: 0 10%;
-  overflow: hidden;
-  cursor: grab;
-}
-.inner-wrapper {
-  display: flex;
-  gap: 1.5rem;
-  padding: 30px 10px;
-}
-
-.box {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #fe2c55;
-}
-
-.boxblue {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #1e00ff;
-}
+/* @media screen and (max-width: 600px) {
+  
+} */

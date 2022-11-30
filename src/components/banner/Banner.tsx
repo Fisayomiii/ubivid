@@ -1,30 +1,53 @@
-import "react";
-
+import { useEffect, useState } from "react"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+// import { Link } from "react-router-dom";
 function Banner() {
+
+  interface IMovie {
+    adult: boolean;
+    backdrop_path: string;
+    genre_ids: Number[];
+    id: number;
+    original_language: string;
+    original_title: string;
+    overview: string;
+    popularity: number;
+    poster_path: string;
+    release_date: string;
+    title: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number
+  }
+
+  const [popularMovies, setPopularMovies] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.themoviedb.org/3/movie/popular?api_key=36d53de2a3632c1939907e6f9a567b84")
+      .then(res => res.json())
+      .then(data => setPopularMovies(data.results))
+  }, [])
 
   return (
     <>
-
       <section className="content_section">
-        <div className="banner">
-          <img
-            src="https://fandomwire.com/wp-content/uploads/2022/05/black-adam-2021-poster-6173-scaled.webp"
-            className="backdrop_image"
-            alt="err displaying backdrop_image"
-          />
-        </div>
-        <div className="backdrop_text">
-          <p className="title">Black Adam</p>
-          <span className="backdropbtn">Action</span> <span className="backdropbtn">Fantasy
-          </span> <span className="backdropbtn">Science Fiction</span>
-          {/* <div className="action">
-            <button type="button" className="watchbtn">
-              <span className="watchbtn" >See More<i className="bx bx-play-circle"></i></span>
-            </button>
-          </div> */}
-        </div>
+        <Carousel showStatus={false} showIndicators={false} showArrows={true} showThumbs={false} autoPlay={true} transitionTime={150} infiniteLoop={true} interval={13000}>
+          {popularMovies.map((movie: IMovie, index) => (
+            <>
+              <div key={index}>
+                <div>
+                  <img src={`https://image.tmdb.org/t/p/original` + movie.backdrop_path} alt="err displaying backdrop_image" />
+                </div>
+                <div className="backdrop_text">
+                  <p className="title">{movie.title}</p>
+                  <span className="backdropbtn">Action</span>
+                </div>
+              </div>
+            </>
+          ))}
+        </Carousel>
       </section>
-
     </>
   );
 }
