@@ -379,10 +379,6 @@ body {
   transition: transform 0.5s ease;
 }
 
-/* .poster-img .posterPath-img:hover {
-  transform: scale(1.1);
-} */
-
 .icons span {
   width: 40px;
   height: 40px;

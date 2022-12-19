@@ -1,25 +1,22 @@
 import '../src/styles/main.css';
 import '../src/styles/media.query.css';
-import Sidebar from './components/sidebar/Sidebar';
-import Banner from './components/banner/Banner';
-import PopularMovies from './components/movies/PopularMovies';
-import Populartv from './components/movies/Populartv';
-import Toprated from './components/movies/TopratedMovies';
-import UpcomingMovies from './components/movies/UpcomingMovies';
+import { Routes, Route } from "react-router-dom"
+import Home from './pages/Home/Home';
+import Movieinfo from './pages/Movieinfo/Movieinfo';
+import NotFound from './pages/404 Page/NotFound';
 
 function App() {
 
   return (
-    <div className="app">
-      <Sidebar />
-      <main className="content">
-        <Banner />
-        <PopularMovies />
-        <Populartv />
-        <Toprated />
-        <UpcomingMovies />
-      </main>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/m' element={<Movieinfo />} />
+        <Route path='/*' element={<NotFound />} />
+
+      </Routes>
+
+    </>
   )
 }
 

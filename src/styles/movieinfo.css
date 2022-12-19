@@ -1,0 +1,74 @@
+.backdrop_text {
+    position: absolute;
+    /* margin-left: 140px; */
+    z-index: var(--z-10);
+    top: 35%;
+    /* width: 60%; */
+    /* text-align: justify; */
+}
+
+.casts {
+    background: var(--body-color);
+    margin-top: -10em;
+    padding: 20px 30px;
+    margin-bottom: 40em;
+}
+
+.movies_header {
+    margin-bottom: 3em;
+}
+
+.wrapper {
+    position: absolute;
+    width: 73%;
+    margin: -2% 3%;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.inner-wrapper {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.poster-img {
+    position: relative;
+    height: auto;
+    width: auto;
+    min-height: 200px;
+    min-width: 230px;
+    padding: 15px;
+}
+
+.poster-img .posterPath-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.poster_text {
+    position: absolute;
+    z-index: var(--z-10);
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    backdrop-filter: blur(54px);
+    border-radius: 8px;
+    padding: 12px;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster_text .title {
+    font-weight: var(--font-semi-bold);
+    display: block;
+}
+
+.poster_text .movie_info {
+    font-weight: 300;
+    color: var(--title-color-alt);
+}
