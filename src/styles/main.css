@@ -1,0 +1,540 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap");
+
+:root {
+  /*========== Colors ==========*/
+  --title-color: #ffffff;
+  --title-color-alt: #d2d7dd;
+  --color-testing: #ff0000;
+  --container-pink: #fe2c55;
+  --dark-color: #222221;
+
+  /*Green gradient*/
+  --body-color: linear-gradient(90deg,
+      hsl(225, 11%, 15%) 0%,
+      hsl(225, 11%, 15%) 100%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 3rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-small: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bolder: 900;
+
+  /*========== Margin Bottom ==========*/
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.7rem;
+
+  /*========== z index ==========*/
+  --z-1: 1;
+  --z-10: 10;
+  --z-100: 100;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 5px;
+  background: #222221;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555555;
+  border-radius: 5px;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background: var(--body-color);
+  color: var(--title-color);
+  overflow-x: hidden;
+}
+
+.app {
+  background: var(--body-color);
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.logo_div h4 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  color: var(--title-color);
+}
+
+.logo_div span {
+  color: var(--container-pink);
+}
+
+.sidebar {
+  flex: 1 1 0;
+  max-width: 230px;
+  padding: 4rem 2rem;
+  width: 300px;
+  transition: 0.3s all;
+  height: 400vh;
+  z-index: var(--z-100);
+  background: #23252B;
+  overflow-y: auto;
+}
+
+.sidebar_section ul {
+  list-style-type: none;
+  margin-bottom: var(--mb-2-5);
+}
+
+.sidebar_section p {
+  font-size: var(--smaller-font-size);
+  margin-top: 40px;
+  color: var(--title-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar_section ul li a {
+  display: inline-block;
+  margin: 20px 0 0 0;
+  color: var(--title-color-alt);
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+.sidebar_section ul li a {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar_section ul li a.active::before {
+  content: "";
+  background: var(--container-pink);
+  display: block;
+  height: 20px;
+  width: 8px;
+  position: absolute;
+  left: 0;
+  box-shadow: 0 0 1px var(--container-pink), 0 0 2px var(--container-pink),
+    0 0 4px var(--container-pink), 0 0 8px var(--container-pink),
+    0 0 16px var(--container-pink), 0 0 24px var(--container-pink);
+}
+
+.sidebar_section ul li a:hover {
+  color: var(--title-color);
+}
+
+.sidebar_section ul li a span {
+  margin-left: 10px;
+  font-weight: var(--font-small);
+  font-size: var(--normal-font-size);
+  display: flex;
+  align-items: center;
+}
+
+
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 99px;
+  z-index: var(--z-100);
+  background-color: var(--container-pink);
+  cursor: pointer;
+}
+
+.hamburger input[type="checkbox"] {
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  display: block;
+  z-index: var(--z-10);
+  opacity: 0;
+  cursor: pointer;
+}
+
+.hamburgerlines {
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburgerlines .lines {
+  display: block;
+  height: 4px;
+  width: 80%;
+  background: var(--title-color);
+}
+
+.hamburger input[type="checkbox"]:checked~.hamburgerlines .lines {
+  background: var(--title-color);
+}
+
+.hamburgerlines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburgerlines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger input[type="checkbox"]:checked~.hamburgerlines .line1 {
+  transform: translateX(5px) rotate(45deg);
+}
+
+.hamburger input[type="checkbox"]:checked~.hamburgerlines .line2 {
+  display: none;
+}
+
+.hamburger input[type="checkbox"]:checked~.hamburgerlines .line3 {
+  transform: translateX(1px) rotate(-40deg);
+}
+
+.content {
+  flex: 1 1 0;
+}
+
+.banner {
+  height: 100vh;
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+}
+
+.backdrop_image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  z-index: var(--z-10);
+  overflow: hidden;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.backdrop_text {
+  position: absolute;
+  margin-left: 140px;
+  z-index: var(--z-10);
+  top: 40%;
+  width: 60%;
+  text-align: justify;
+}
+
+.backdrop_text .title {
+  font-size: 2.4em;
+  font-weight: var(--font-semi-bold);
+}
+
+.backdrop_text span.genre_items {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 20px;
+  border-radius: 30px;
+  font-size: var(--h3-font-size);
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(255, 255, 255, 0) 50%);
+  backdrop-filter: blur(15px);
+  margin-right: 10px;
+}
+
+.action button {
+  border: none;
+  width: 170px;
+  margin-top: 30px;
+  padding: 10px 0;
+  border-radius: 40px;
+  word-spacing: 10px;
+  background-color: var(--container-pink);
+  color: var(--title-color);
+  font-weight: var(--font-small);
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action button span {
+  margin-right: 10px;
+}
+
+.action button:hover {
+  opacity: 95%;
+}
+
+.overlay {
+  background: linear-gradient(90deg, rgb(0, 0, 0, 0.9) 10%, transparent 80%),
+    linear-gradient(360deg, rgb(0, 0, 0, 0.9) 0%, transparent 50%);
+  position: relative;
+  z-index: var(--z-10);
+  height: 500px;
+  width: 100%;
+}
+
+.backdropbtn {
+  backdrop-filter: blur(15px);
+  display: inline-block;
+  font-size: var(--h3-font-size);
+  margin-top: 15px;
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(255, 255, 255, 0) 50%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-image: initial;
+  border-radius: 30px;
+  padding: 5px 20px;
+}
+
+.watchbtn {
+  background-color: var(--container-pink);
+  color: var(--title-color);
+  font-weight: var(--font-small);
+  width: 100px;
+  word-spacing: 10px;
+  border-radius: 40px;
+  padding: 10px 0px;
+  margin-left: -25px;
+  transition: all 0.3s ease 0s;
+}
+
+.movies {
+  background: var(--body-color);
+  margin-top: 8em;
+  padding: 20px 30px;
+  margin-bottom: 40em;
+}
+
+.movies_header {
+  margin-bottom: 3em;
+}
+
+.wrapper {
+  position: absolute;
+  width: 73%;
+  margin: -2% 3%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.inner-wrapper {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.poster-img {
+  position: relative;
+  height: auto;
+  width: auto;
+  min-height: 200px;
+  min-width: 230px;
+  padding: 15px;
+}
+
+.poster-img .posterPath-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.icons span {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--title-color);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+
+.icons {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: var(--z-10);
+}
+
+.poster_text {
+  position: absolute;
+  z-index: var(--z-10);
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  backdrop-filter: blur(54px);
+  border-radius: 8px;
+  padding: 12px;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.poster_text .title {
+  font-weight: var(--font-semi-bold);
+  display: block;
+}
+
+.poster_text .movie_info {
+  font-weight: 300;
+  color: var(--title-color-alt);
+}
+
+
+/* Media query */
+@media only screen and (max-width: 767px) {
+  .backdrop_image {
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    z-index: var(--z-10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .backdrop_text {
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    text-align: center;
+  }
+
+  .backdrop_text .title {
+    font-size: 20px;
+    font-weight: var(--font-bolder);
+  }
+
+  .action button {
+    width: 150px;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .watchbtn {
+    background-color: var(--container-pink);
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    width: 100px;
+    word-spacing: 10px;
+    border-radius: 40px;
+    padding: 10px 0px;
+    margin-left: 25px;
+    transition: all 0.3s ease 0s;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    max-width: 200px;
+  }
+
+  .backdrop_image {
+    position: absolute;
+    bottom: 30%;
+  }
+}
+
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .content {
+    padding-top: 8rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .visible {
+    position: fixed;
+    flex: 1 1 0;
+    max-width: 230px;
+    padding: 4rem 2rem;
+    width: 300px;
+    transition: 0.3s all;
+    height: 100vh;
+    z-index: var(--z-100);
+    background: #23252B;
+    overflow-y: auto;
+  }
+
+  .content_section {
+    position: relative;
+    top: -20%;
+    margin-bottom: 20em;
+  }
+
+  .movies {
+    margin-top: -6em;
+    padding: 20px 30px;
+    margin-bottom: 50em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .movies_header {
+    padding: 20px 15px;
+  }
+}
