@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import Skeleton from '../../Ui/loader/Loader';
 import Error from '../../Ui/error/Error';
 
-function PopularMovies() {
+function Populartv() {
     const [movies, setmovies] = useState([]);
     const [isloading, setisloading] = useState(true);
     const [error, seterror] = useState(true);
 
-    const url = "https://api.themoviedb.org/3/movie/popular?api_key=36d53de2a3632c1939907e6f9a567b84";
+    const url = "https://api.themoviedb.org/3/tv/popular?api_key=36d53de2a3632c1939907e6f9a567b84";
 
     useEffect(() => {
         getData()
@@ -26,11 +26,12 @@ function PopularMovies() {
             seterror(err)
         });
     }
+
     return (
         <>
             {/* <!-- Popular Movies --> */}
-            <section className="movies" id="Popular_Movies">
-                <h4 className="movies_header">Popular Movies</h4>
+            <section className="movies" id="Popular_Tv">
+                <h4 className="movies_header">Popular Tv's</h4>
                 <br />
                 {isloading ? <Skeleton /> :
                     <div>
@@ -49,8 +50,8 @@ function PopularMovies() {
                                             </motion.div>
                                             <img src={`https://image.tmdb.org/t/p/original/` + items.poster_path} alt={items.title} className='posterPath-img' />
                                             <motion.div className="poster_text">
-                                                <motion.span className="title">{items.title}</motion.span>
-                                                <motion.span className="movie_info">{items.release_date} • <i className='bx bxs-star' style={{ color: `#0687f9` }}></i> {items.vote_average} </motion.span>
+                                                <motion.span className="title">{items.original_name}</motion.span>
+                                                <motion.span className="movie_info">{items.first_air_date} • <i className='bx bxs-star' style={{ color: `#0687f9`}}></i> {items.vote_average} </motion.span>
                                             </motion.div>
                                         </motion.div>
                                     ))}
@@ -60,8 +61,9 @@ function PopularMovies() {
                     </div>
                 }
             </section>
+
         </>
     )
 }
 
-export default PopularMovies
+export default Populartv;
