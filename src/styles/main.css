@@ -155,7 +155,6 @@ body {
 }
 
 
-
 .menu-toggle {
   display: none;
   position: fixed;
@@ -522,7 +521,7 @@ body {
 
   .content_section {
     position: relative;
-    top: -20%;
+    top: -4%;
     margin-bottom: 20em;
   }
 
