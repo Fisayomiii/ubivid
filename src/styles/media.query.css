@@ -80,11 +80,11 @@
         left: 0;
     }
 
-    .content_section {
+    /* .content_section {
         position: relative;
         top: -6%;
         margin-bottom: 20em;
-    }
+    } */
 }
 
 @media only screen and (max-width: 991px) {

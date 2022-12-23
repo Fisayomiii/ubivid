@@ -5,6 +5,7 @@ import Banner from './components/banner/Banner';
 import PopularMovies from './components/movies/PopularMovies';
 import Populartv from './components/movies/Populartv';
 import TopratedMovies from './components/movies/TopratedMovies';
+import UpcomingMovies from './components/movies/UpcomingMovies';
 import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <PopularMovies/>
           <Populartv/>
           <TopratedMovies/>
+          <UpcomingMovies/>
         </main>
       </div>
     </>
