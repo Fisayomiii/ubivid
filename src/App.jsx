@@ -2,6 +2,7 @@
 import '../src/styles/main.css';
 import '../src/styles/media.query.css';
 import Banner from './components/banner/Banner';
+import Footer from './components/footer/Footer';
 import PopularMovies from './components/movies/PopularMovies';
 import Populartv from './components/movies/Populartv';
 import TopratedMovies from './components/movies/TopratedMovies';
@@ -16,10 +17,11 @@ function App() {
         <Sidebar />
         <main className="content">
           <Banner />
-          <PopularMovies/>
-          <Populartv/>
-          <TopratedMovies/>
-          <UpcomingMovies/>
+          <PopularMovies />
+          <Populartv />
+          <TopratedMovies />
+          <UpcomingMovies />
+          <Footer />
         </main>
       </div>
     </>
