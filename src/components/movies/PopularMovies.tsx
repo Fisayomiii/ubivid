@@ -6,6 +6,27 @@ import Skeleton from '../../Ui/loader/Loader';
 import Error from '../../Ui/error/Error';
 
 function PopularMovies() {
+    interface iMovie {
+        page: number;
+        total_pages: number;
+        total_results: number;
+        name: string;
+        adult: boolean;
+        backdrop_path: string;
+        genre_ids?: (number)[] | null;
+        id: number;
+        original_language: string;
+        original_title: string;
+        overview: string;
+        popularity: number;
+        poster_path: string;
+        release_date: string;
+        title: string;
+        video: boolean;
+        vote_average: number;
+        vote_count: number;
+    }
+
     const [movies, setmovies] = useState([]);
     const [isloading, setisloading] = useState(true);
     const [error, seterror] = useState(true);
@@ -38,7 +59,7 @@ function PopularMovies() {
                         {error ? <Error /> :
                             <motion.div className="wrapper" whileTap={{ cursor: "grabbing" }} initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }}>
                                 <motion.div className="inner-wrapper" drag="x" dragConstraints={{ right: -0 }}>
-                                    {movies.map((items, index) => (
+                                    {movies.map((items: iMovie, index) => (
                                         <motion.div className="poster-img" key={index}>
                                             <img src={`https://image.tmdb.org/t/p/original/` + items.poster_path} alt={items.title} className='posterPath-img' />
 

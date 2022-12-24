@@ -437,7 +437,7 @@ body {
   left: 50%;
   background: var(--dark-color);
   transform: translateX(-50%);
-  width: 90%;
+  width: 88%;
   padding: 12px;
   opacity: 0;
   transition: 0.5s;
@@ -449,7 +449,6 @@ body {
   bottom: 4%;
   opacity: 1;
 }
-
 
 /* footer */
 .footer {

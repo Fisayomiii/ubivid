@@ -5,6 +5,26 @@ import Skeleton from '../../Ui/loader/Loader';
 import Error from '../../Ui/error/Error';
 
 function UpcomingMovies() {
+  interface iMovie {
+    page: number;
+    total_pages: number;
+    total_results: number;
+    name: string;
+    adult: boolean;
+    backdrop_path: string;
+    genre_ids?: (number)[] | null;
+    id: number;
+    original_language: string;
+    original_title: string;
+    overview: string;
+    popularity: number;
+    poster_path: string;
+    release_date: string;
+    title: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
+  }
 
   const [upcomingMovies, setupcomingMovies] = useState([]);
   const [isloading, setisloading] = useState(true);
@@ -40,7 +60,7 @@ function UpcomingMovies() {
             {error ? <Error /> :
               <motion.div className="wrapper" whileTap={{ cursor: "grabbing" }} initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }}>
                 <motion.div className="inner-wrapper" drag="x" dragConstraints={{ right: -0 }}>
-                  {upcomingMovies.map((items, index) => (
+                  {upcomingMovies.map((items: iMovie, index) => (
                     <motion.div className="poster-img" key={index}>
                       <img src={`https://image.tmdb.org/t/p/original/` + items.poster_path} alt="" className='posterPath-img' />
                       <motion.div className="poster_text">

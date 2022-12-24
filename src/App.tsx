@@ -6,16 +6,13 @@ import '../src/styles/main.css';
 import '../src/styles/media.query.css';
 
 function App() {
-
   return (
     <>
-      {/* <Router> */}
-        <Routes>
-          <Route path='/' element={<Home />} />
-          {/* <Route path="movie/:id" element={<Movieinfo />} /> */}
-          <Route path='/*' element={<NotFound />} />
-        </Routes>
-      {/* </Router> */}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        {/* <Route path="movie/:id" element={<Movieinfo />} /> */}
+        <Route path='/*' element={<NotFound />} />
+      </Routes>
     </>
   )
 }

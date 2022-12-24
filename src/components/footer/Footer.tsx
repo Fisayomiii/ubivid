@@ -9,13 +9,13 @@ function Footer() {
                     <ul>
                         <li>
                             <a href="https://github.com/Fisayomiii/Ubivid" target="_blank" rel="noreferrer">
-                                <i class='bx bx-star'></i>
+                                <i className='bx bx-star'></i>
                                 <span>Star</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/Fisayomiii/Ubivid" target="_blank" rel="noreferrer">
-                                <i class='bx bx-git-repo-forked'></i>
+                                <i className='bx bx-git-repo-forked'></i>
                                 <span>Fork</span>
                             </a>
                         </li>

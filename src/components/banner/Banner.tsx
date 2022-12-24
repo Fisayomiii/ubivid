@@ -12,11 +12,33 @@ function Banner() {
             .then(data => setPopularMovies(data.results))
     }, [])
 
+    interface iMovie {
+        page: number;
+        total_pages: number;
+        total_results: number;
+        name: string;
+        adult: boolean;
+        backdrop_path: string;
+        genre_ids?: (number)[] | string;
+        id: number;
+        genres: string;
+        original_language: string;
+        original_title: string;
+        overview: string;
+        popularity: number;
+        poster_path: string;
+        release_date: string;
+        title: string;
+        video: boolean;
+        vote_average: number;
+        vote_count: number;
+    }
+
     return (
         <>
             <section className="content_section">
                 <Carousel showStatus={false} showIndicators={false} showArrows={true} showThumbs={false} autoPlay={true} transitionTime={150} infiniteLoop={true} interval={13000}>
-                    {popularMovies.map((movie, index) => (
+                    {popularMovies.map((movie: iMovie, index) => (
                         <>
                             <div key={index}>
                                 <div>
