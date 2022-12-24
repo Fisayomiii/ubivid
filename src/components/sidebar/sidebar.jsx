@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 
 function Sidebar() {
     const [menu_class, setMenuClass] = useState("menu sidebar hidden")
@@ -16,19 +16,13 @@ function Sidebar() {
         }
         setIsMenuClicked(!isMenuClicked)
     }
-  return (
-    <>
+    return (
+        <>
             {/* Sidebar */}
             <aside className={menu_class}>
                 <div className="logo_div">
                     <h4>Ubi<span>vid</span>.</h4>
                 </div>
-
-                {/* <div className="search">
-                 <i className="bx bx-search"></i>
-                 <input type="text" className="hide" placeholder="Quick Search ..." />
-            </div> */}
-            
                 <br />
                 <div>
                     <div className="sidebar_section">
@@ -60,84 +54,6 @@ function Sidebar() {
                             </li>
                         </ul>
                     </div>
-
-                    {/* <div className="sidebar_section">
-                    <p>Genres</p>
-                    <ul className="ps-0">
-                        <li>
-                            <a href="/home">
-                                <i className="bx bx-run"></i>
-                                <span>Action</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/home">
-                                <i className="bx bx-cycling"></i>
-                                <span>Adventure</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/home">
-                                <i className="bx bx-face"></i>
-                                <span>Animation</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/home">
-                                <i className="bx bx-ghost"></i>
-                                <span>Horror</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/home">
-                                <i className="bx bx-film"></i>
-                                <span>Science Fiction</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/home">
-                                <i className="bx bx-film"></i>
-                                <span>Western</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div> */}
-
-                    <div className="sidebar_section">
-                        <p>Options</p>
-                        <ul className="ps-0">
-                            {/* <li>
-                            <a href="/home">
-                                <i className="bx bx-search-alt"></i>
-                                <span>Search</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/home">
-                                <i className="bx bx-bell"></i>
-                                <span>Notifications</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/home">
-                                <i className="bx bx-heart"></i>
-                                <span>Favorites</span>
-                            </a>
-                        </li> */}
-                            <li>
-                                <a href="/home">
-                                    <i className="bx bx-user-circle"></i>
-                                    <span>Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/home">
-                                    <i className="bx bx-cog"></i>
-                                    <span>Settings</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </aside>
 
@@ -152,9 +68,8 @@ function Sidebar() {
                     </div>
                 </div>
             </div>
-
         </>
-  )
+    )
 }
 
 export default Sidebar
