@@ -31,7 +31,7 @@ function TopratedMovies() {
         <>
             {/* <!-- Popular Movies --> */}
             <section className="movies" id="Top_Rated">
-              <h4 className="movies_header">Top Rated Movies</h4>
+                <h4 className="movies_header">Top Rated Movies</h4>
                 <br />
                 {isloading ? <Skeleton /> :
                     <div>
@@ -40,18 +40,12 @@ function TopratedMovies() {
                                 <motion.div className="inner-wrapper" drag="x" dragConstraints={{ right: -0 }}>
                                     {topRatedMovies.map((items, index) => (
                                         <motion.div className="poster-img" key={index}>
-                                            <motion.div className="icons">
-                                                <motion.span>
-                                                    <motion.i className='bx bx-movie-play'></motion.i>
-                                                </motion.span>
-                                                <motion.span>
-                                                    <motion.i whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="bx bx-heart fav" title='Add to Favorites'></motion.i>
-                                                </motion.span>
-                                            </motion.div>
                                             <img src={`https://image.tmdb.org/t/p/original/` + items.poster_path} alt="" className='posterPath-img' />
                                             <motion.div className="poster_text">
                                                 <motion.span className="title">{items.title}</motion.span>
-                                                <motion.span className="movie_info">{items.release_date} • <i className='bx bxs-star' style={{ color: `#0687f9`}}></i> {items.vote_average} </motion.span>
+                                                <motion.span className="movie_info">{items.release_date} • <i className='bx bxs-star' style={{ color: `#0687f9` }}></i> {items.vote_average} </motion.span>
+                                            </motion.div>
+                                            <motion.div className="desc_poster_text">{items ? items.overview : "Description not available"}
                                             </motion.div>
                                         </motion.div>
                                     ))}

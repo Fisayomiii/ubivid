@@ -430,6 +430,27 @@ body {
   color: var(--title-color-alt);
 }
 
+.desc_poster_text{
+  position: absolute;
+  z-index: var(--z-10);
+  bottom: -70%;
+  left: 50%;
+  background: var(--dark-color);
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 12px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.poster-img:hover .desc_poster_text {
+  position: absolute;
+  z-index: var(--z-10);
+  bottom: 4%;
+  opacity: 1;
+}
+
+
 /* footer */
 .footer {
   display: flex;
