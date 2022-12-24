@@ -46,7 +46,7 @@ function PopularMovies() {
                                                 <motion.span className="title">{items.title}</motion.span>
                                                 <motion.span className="movie_info">{items.release_date} • <i className='bx bxs-star' style={{ color: `#0687f9` }}></i> {items.vote_average} </motion.span>
                                             </motion.div>
-                                            <motion.div className="desc_poster_text">{items ? items.overview: "Description not available"}
+                                            <motion.div className="desc_poster_text">{items ? items.overview : "Description not available"}
                                             </motion.div>
                                         </motion.div>
                                     ))}

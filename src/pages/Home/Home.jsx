@@ -1,3 +1,4 @@
+import React from 'react';
 import Banner from '../../components/banner/Banner';
 import PopularMovies from '../../components/movies/PopularMovies';
 import Populartv from '../../components/movies/Populartv';
@@ -6,12 +7,12 @@ import UpcomingMovies from '../../components/movies/UpcomingMovies';
 import Footer from '../../components/footer/Footer';
 import Sidebar from '../../components/sidebar/Sidebar';
 
-
 function Home() {
+
     return (
         <>
             <div className="app">
-                <Sidebar/>
+                <Sidebar />
                 <main className="content">
                     <Banner />
                     <PopularMovies />

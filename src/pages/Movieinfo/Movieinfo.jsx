@@ -1,5 +1,7 @@
+import React from 'react';
 import Sidebar from '../../components/sidebar/Sidebar';
 import img from '../../assets/imgs/favicon.jpg';
+
 function Movieinfo() {
   return (
     <>

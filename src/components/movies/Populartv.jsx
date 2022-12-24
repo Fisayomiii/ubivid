@@ -43,9 +43,9 @@ function Populartv() {
                                             <img src={`https://image.tmdb.org/t/p/original/` + items.poster_path} alt={items.title} className='posterPath-img' />
                                             <motion.div className="poster_text">
                                                 <motion.span className="title">{items.original_name}</motion.span>
-                                                <motion.span className="movie_info">{items.first_air_date} • <i className='bx bxs-star' style={{ color: `#0687f9`}}></i> {items.vote_average} </motion.span>
+                                                <motion.span className="movie_info">{items.first_air_date} • <i className='bx bxs-star' style={{ color: `#0687f9` }}></i> {items.vote_average} </motion.span>
                                             </motion.div>
-                                            <motion.div className="desc_poster_text">{items ? items.overview: "Description not available"}
+                                            <motion.div className="desc_poster_text">{items ? items.overview : "Description not available"}
                                             </motion.div>
                                         </motion.div>
                                     ))}

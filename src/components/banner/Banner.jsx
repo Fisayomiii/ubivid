@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ function Banner() {
             .then(res => res.json())
             .then(data => setPopularMovies(data.results))
     }, [])
+
     return (
         <>
             <section className="content_section">

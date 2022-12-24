@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 function Sidebar() {
+
     const [menu_class, setMenuClass] = useState("menu sidebar hidden")
     const [isMenuClicked, setIsMenuClicked] = useState(false)
 
@@ -16,6 +17,7 @@ function Sidebar() {
         }
         setIsMenuClicked(!isMenuClicked)
     }
+
     return (
         <>
             {/* Sidebar */}
@@ -24,6 +26,7 @@ function Sidebar() {
                     <h4>Ubi<span>vid</span>.</h4>
                 </div>
                 <br />
+
                 <div>
                     <div className="sidebar_section">
                         <p>Menu</p>
